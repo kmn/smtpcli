@@ -1,8 +1,8 @@
 Metadata-Version: 1.0
 Name: smtpcli
-Version: 0.1
+Version: 0.2
 Summary: SMTP CLI tool
-Home-page: https://github.com/kmn/smtpscli
+Home-page: https://github.com/kmn/smtpcli
 Author: Shohei Kamon
 Author-email: kamonshohei@gmail.com
 License:  GNU General Public License version 3
@@ -23,14 +23,24 @@ Description: ======================================
         ::
         
            $ git clone https://github.com/kmn/smtpcli
-           $ cd smtp
+           $ cd smtpcli
            $ sudo python setup.py install
+           $ cp smtpcli.conf.sample $HOME/.smtpcli.conf
+         
+           and edit $HOME/.smtpcli.conf
         
-           
         History
         -------
         
-        0.1 (2012-09)
+        0.2 (2012-09-16)
+        ~~~~~~~~~~~~~~~~
+        *
+        
+        0.1 (2012-09-16)
+        ~~~~~~~~~~~~~~~~
+        * modify setup py
+        
+        0.0 (2012-06)
         ~~~~~~~~~~~~~~~~
         * first release
         
@@ -55,26 +65,17 @@ Description: ======================================
         
         Sending mail
         ~~~~~~~~~~~~~~~~~~~~
+        
         ::
+           $ echo "Hello, world!" > msg.txt
+           $ smtpcli --to user007@example.org  --subject "from 001 to 007" \
+             --file msg.txt
         
-           $ smtpcli --to user007@example.org  --title "from 001 to 007" \
-           --contents-file msg.txt
-           true
+           To: user007@example.org
+           Subject: from 001 to 007
+           Body: Hello, world!
         
-        Contribute
-        ----------
-        
-        Firstly copy pre-commit hook script.
-        ::
-        
-           $ cp -f utils/pre-commit.txt .git/hooks/pre-commit
-        
-        Next install python2.7 later, and nosetests. Below in Debian GNU/Linux Sid system,
-        ::
-        
-           $ sudo apt-get install python python-nose
-        
-        Then checkout 'devel' branch for development, commit your changes. Before pull request, execute git rebase.
+           Send this email? [y/N] 
         
         
         See also
@@ -99,9 +100,10 @@ Description: ======================================
         * Add siguniture
         * gpg
         
-        Known bug
+        Known bugs
         ---------
         
+        * garbling when viewing via iPhone.
         
 Platform: UNKNOWN
 Classifier: Development Status :: 3 - Alpha
