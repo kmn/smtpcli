@@ -48,7 +48,7 @@ parser.add_argument('-v', '--version', action='version',
 parser.add_argument('-t', '--to', metavar='dest_address', help='destination mail address', required=True)
 parser.add_argument('-s', '--subject', metavar='subject', help='email subject', required=True)
 parser.add_argument('-f', '--file', metavar='filename', help='the file containing email body',required=True, type=argparse.FileType('r'))
-parser.add_argument('--no-confirm', metavar='no-confirm', help='no confirm')
+#parser.add_argument('--no-confirm', metavar='no-confirm', help='no confirm')
 args = parser.parse_args()
 
 to_addr = args.to
