@@ -15,14 +15,24 @@ Setup
 ::
 
    $ git clone https://github.com/kmn/smtpcli
-   $ cd smtp
+   $ cd smtpcli
    $ sudo python setup.py install
+   $ cp smtpcli.conf.sample $HOME/.smtpcli.conf
+ 
+   and edit $HOME/.smtpcli.conf
 
-   
 History
 -------
 
-0.1 (2012-09)
+0.2 (2012-09-16)
+~~~~~~~~~~~~~~~~
+*
+
+0.1 (2012-09-16)
+~~~~~~~~~~~~~~~~
+* modify setup py
+
+0.0 (2012-06)
 ~~~~~~~~~~~~~~~~
 * first release
 
@@ -47,26 +57,17 @@ Copy examples/.smtpcli.conf.sample to `$HOME/.smtpcli.conf`. `password` key to s
 
 Sending mail
 ~~~~~~~~~~~~~~~~~~~~
+
 ::
+   $ echo "Hello, world!" > msg.txt
+   $ smtpcli --to user007@example.org  --subject "from 001 to 007" \
+     --file msg.txt
 
-   $ smtpcli --to user007@example.org  --title "from 001 to 007" \
-   --contents-file msg.txt
-   true
+   To: user007@example.org
+   Subject: from 001 to 007
+   Body: Hello, world!
 
-Contribute
-----------
-
-Firstly copy pre-commit hook script.
-::
-
-   $ cp -f utils/pre-commit.txt .git/hooks/pre-commit
-
-Next install python2.7 later, and nosetests. Below in Debian GNU/Linux Sid system,
-::
-
-   $ sudo apt-get install python python-nose
-
-Then checkout 'devel' branch for development, commit your changes. Before pull request, execute git rebase.
+   Send this email? [y/N] 
 
 
 See also
