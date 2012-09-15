@@ -35,7 +35,7 @@ password    = conf.get('smtpcli', 'password')
 to_addr      = False
 subject      = False
 body         = False
-filename     = False
+file         = False
 
 #Define sub-command and command line options
 
@@ -45,7 +45,7 @@ from __init__ import __version__
 parser = argparse.ArgumentParser(description='usage')
 parser.add_argument('-v', '--version', action='version',
                        version=__version__)
-parser.add_argument('-t', '--to', metavar='to', help='destination mail address', required=True)
+parser.add_argument('-t', '--to', metavar='dest_address', help='destination mail address', required=True)
 parser.add_argument('-s', '--subject', metavar='subject', help='email subject', required=True)
 parser.add_argument('-f', '--file', metavar='filename', help='the file containing email body',required=True, type=argparse.FileType('r'))
 parser.add_argument('--no-confirm', metavar='no-confirm', help='no confirm')
@@ -53,7 +53,7 @@ args = parser.parse_args()
 
 to_addr = args.to
 subject = args.subject
-body = args.filename.read()
+body = args.file.read()
 
 
 def create_message(from_addr, to_addr, subject, body, encoding):
@@ -77,9 +77,50 @@ def send_via_smtp(from_addr, to_addr, msg):
     ss.sendmail(from_addr, to_addr, msg.as_string())
     ss.close
 
+def query_yes_no(question, default="no"):
+    '''Ask a yes/no question via row_input() and return their answer.
+    "questin" is a string that is presented to the user.
+    "default" is the presumed answer if the user just hit <Enter>.
+        It must be "yes", "no"(default)  or None (meaning an
+        answer is required of the user).
+
+    " The "anwer" return value is one of "yes" or "no".
+    '''
+    valid = {"yes":True,  "y":True, "ye":True,
+             "no":False,  "n":False}
+    if default == None:
+        prompt = " [y/n] "
+    elif default == "yes":
+        prompt = " [Y/n] "
+    elif default == "no":
+        prompt = " [y/N] "
+    else:
+        raise ValueError("invalid default answer: '%s'" % default)
+
+    while True:
+        sys.stdout.write(question + prompt)
+        choice = raw_input().lower()
+        if default is not None and choice == '':
+            return valid[default]
+        elif choice in valid:
+            return valid[choice]
+        else:
+            sys.stdout.write("Please respond with 'yes' or 'no' "\
+                "(or 'y' or 'n').\n")
+
+def send_confirm():
+    print "To: " + to_addr
+    print "Subject: " + subject
+    print "Body: " + body
+    if query_yes_no("Send this email?") == False:
+        sys.exit()
+
+
 def main():
+    send_confirm()
     msg = create_message(from_addr, to_addr, subject, body, encoding)
     send_via_smtp(from_addr, to_addr, msg)
+    print("Sent email, Successfully")
 
 if __name__ == '__main__':
     main()
