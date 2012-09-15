@@ -41,7 +41,7 @@ long_description = \
 requires = ['setuptools']
 
 setup(name='smtpcli',
-      version=tonicdnscli.__version__,
+      version=smtpcli.__version__,
       description='SMTP CLI tool',
       long_description=long_description,
       author='Shohei Kamon',
@@ -51,7 +51,6 @@ setup(name='smtpcli',
       classifiers=classifiers,
       packages=find_packages('src'),
       package_dir={'': 'src'},
-      data_files = [('share/smtpcli/examples', ['examples/example.org.txt'])],
       install_requires=requires,
       extras_require=dict(
         test=[

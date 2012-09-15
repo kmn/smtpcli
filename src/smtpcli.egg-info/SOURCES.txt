@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README
+setup.cfg
+setup.py.org
+smtpcli.1
+src/README.rst
+src/TODO.rst
+src/smtpcli/__init__.py
+src/smtpcli/command.py
+src/smtpcli.egg-info/PKG-INFO
+src/smtpcli.egg-info/SOURCES.txt
+src/smtpcli.egg-info/dependency_links.txt
+src/smtpcli.egg-info/entry_points.txt
+src/smtpcli.egg-info/requires.txt
+src/smtpcli.egg-info/top_level.txt

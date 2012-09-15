@@ -1,0 +1,7 @@
+setuptools
+
+[test]
+Nose
+pep8
+unittest
+minimock
