@@ -15,6 +15,7 @@ Improvement
 * Add siguniture
 * gpg
 
-Known bug
+Known bugs
 ---------
 
+* garbling when viewing via iPhone.
