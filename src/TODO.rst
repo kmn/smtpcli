@@ -4,16 +4,17 @@ ToDo
 Features
 --------
 
-* Checking existing records When create or delete records.
-* Updating records.
+* Sending  email.
 
 Improvement
 -----------
 
-* Add unittest.
-* Validation input data.
+* Using CC or BCC.
+* Send to multiple destination mailaddress.
+* Add "--no-confirm " option
+* Add siguniture
+* gpg
 
 Known bug
 ---------
 
-* When using in preference --config option than $HOME/.tdclirc.
