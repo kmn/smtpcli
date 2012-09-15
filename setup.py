@@ -29,8 +29,8 @@ classifiers = [
     "Intended Audience :: System Administrators",
     "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
     "Programming Language :: Python",
-    "Topic :: Internet",
-    "Topic :: Internet :: Email",
+    "Topic :: Communications :: Email",
+    "Topic :: Communications :: Email :: Email Clients (MUA)",
     "Topic :: System :: Systems Administration",
 ]
 
@@ -64,6 +64,6 @@ setup(name='smtpcli',
       tests_require=['Nose','pep8','minimock'],
       entry_points="""
         [console_scripts]
-        smtpcli = smtpscli.command:main
+        smtpcli = smtpcli.command:main
 """,
 )
