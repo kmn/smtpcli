@@ -1,0 +1,15 @@
+Source: smtpcli
+Section: python
+Priority: optional
+Maintainer: Shohei Kamon <kamonshohei@gmail.com>
+Build-Depends: debhelper (>= 8.0.0), python-all, python-setuptools, python-nose, python-minimock, pep8
+Standards-Version: 3.9.3
+X-Python-Version: 2.7
+Homepage: https://github.com/kmn/smtpcli
+
+Package: python-smtpcli
+Architecture: all
+Provides: ${python:Provides}
+Depends: ${python:Depends}, ${misc:Depends}
+Description: SMTP client
+ This command line tool for SMTP client.
