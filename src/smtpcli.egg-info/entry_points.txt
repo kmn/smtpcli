@@ -1,3 +1,3 @@
 
         [console_scripts]
-        smtpcli = smtpscli.command:main
+        smtpcli = smtpcli.command:main
