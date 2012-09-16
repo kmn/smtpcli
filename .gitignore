@@ -2,3 +2,4 @@ src/smtpcli/*.pyc
 *.swp
 *.swo
 *.pyc
+update.sh

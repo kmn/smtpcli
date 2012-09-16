@@ -1,8 +1,8 @@
 Metadata-Version: 1.0
 Name: smtpcli
-Version: 0.1
+Version: 0.3
 Summary: SMTP CLI tool
-Home-page: https://github.com/kmn/smtpscli
+Home-page: https://github.com/kmn/smtpcli
 Author: Shohei Kamon
 Author-email: kamonshohei@gmail.com
 License:  GNU General Public License version 3
@@ -20,20 +20,25 @@ Description: ======================================
         
         Setup
         -----
+        
+        Case: Github
+        
         ::
         
            $ git clone https://github.com/kmn/smtpcli
-           $ cd smtp
+           $ cd smtpcli
            $ sudo python setup.py install
+           $ cp sample/smtpcli.conf.sample $HOME/.smtpcli.conf
+         
+           and edit $HOME/.smtpcli.conf
         
-           
-        History
-        -------
+        Case: Pypi
         
-        0.1 (2012-09)
-        ~~~~~~~~~~~~~~~~
-        * first release
-        
+        ::
+           $ sudo pip install smtpcli
+           $ cp sample/smtpcli.conf.sample $HOME/.smtpcli.conf
+         
+           and edit $HOME/.smtpcli.conf
         
         Usage
         -----
@@ -43,6 +48,7 @@ Description: ======================================
         
         An alternative method of command options that use the config file.
         Copy examples/.smtpcli.conf.sample to `$HOME/.smtpcli.conf`. `password` key to set password in plain text.
+        
         ::
         
            # 
@@ -55,26 +61,37 @@ Description: ======================================
         
         Sending mail
         ~~~~~~~~~~~~~~~~~~~~
+        
         ::
+           $ echo "Hello, world!" > msg.txt
+           $ smtpcli --to user007@example.org  --subject "from 001 to 007" \
+             --file msg.txt
         
-           $ smtpcli --to user007@example.org  --title "from 001 to 007" \
-           --contents-file msg.txt
-           true
+           To: user007@example.org
+           Subject: from 001 to 007
+           Body: Hello, world!
         
-        Contribute
-        ----------
+           Send this email? [y/N] 
         
-        Firstly copy pre-commit hook script.
-        ::
         
-           $ cp -f utils/pre-commit.txt .git/hooks/pre-commit
+        History
+        -------
         
-        Next install python2.7 later, and nosetests. Below in Debian GNU/Linux Sid system,
-        ::
+        0.3 (2012-09-16)
+        ~~~~~~~~~~~~~~~~
+        * fix minor bugs
         
-           $ sudo apt-get install python python-nose
+        0.2 (2012-09-16)
+        ~~~~~~~~~~~~~~~~
+        * fix minor bugs
         
-        Then checkout 'devel' branch for development, commit your changes. Before pull request, execute git rebase.
+        0.1 (2012-09-16)
+        ~~~~~~~~~~~~~~~~
+        * modify setup.py
+        
+        0.0 (2012-06)
+        ~~~~~~~~~~~~~~~~
+        * first release
         
         
         See also
@@ -99,9 +116,10 @@ Description: ======================================
         * Add siguniture
         * gpg
         
-        Known bug
+        Known bugs
         ---------
         
+        * garbling when viewing via iPhone.
         
 Platform: UNKNOWN
 Classifier: Development Status :: 3 - Alpha
