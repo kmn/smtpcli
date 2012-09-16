@@ -3,6 +3,7 @@ MANIFEST.in
 setup.cfg
 setup.py
 smtpcli.1
+sample/smtpcli.conf.sample
 src/README.rst
 src/TODO.rst
 src/smtpcli/__init__.py
