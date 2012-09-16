@@ -1,6 +1,5 @@
 LICENSE
 MANIFEST.in
-README
 setup.cfg
 setup.py
 smtpcli.1

@@ -12,30 +12,25 @@ Requirements
 
 Setup
 -----
+
+Case: Github
+
 ::
 
    $ git clone https://github.com/kmn/smtpcli
    $ cd smtpcli
    $ sudo python setup.py install
-   $ cp smtpcli.conf.sample $HOME/.smtpcli.conf
+   $ cp sample/smtpcli.conf.sample $HOME/.smtpcli.conf
  
    and edit $HOME/.smtpcli.conf
 
-History
--------
+Case: Pypi
 
-0.2 (2012-09-16)
-~~~~~~~~~~~~~~~~
-*
-
-0.1 (2012-09-16)
-~~~~~~~~~~~~~~~~
-* modify setup py
-
-0.0 (2012-06)
-~~~~~~~~~~~~~~~~
-* first release
-
+::
+   $ sudo pip install smtpcli
+   $ cp sample/smtpcli.conf.sample $HOME/.smtpcli.conf
+ 
+   and edit $HOME/.smtpcli.conf
 
 Usage
 -----
@@ -45,6 +40,7 @@ Setting the configuration file ($HOME/.smtpcli.conf)
 
 An alternative method of command options that use the config file.
 Copy examples/.smtpcli.conf.sample to `$HOME/.smtpcli.conf`. `password` key to set password in plain text.
+
 ::
 
    # 
@@ -68,6 +64,30 @@ Sending mail
    Body: Hello, world!
 
    Send this email? [y/N] 
+
+
+History
+-------
+
+0.4 (2012-09-16)
+~~~~~~~~~~~~~~~~
+* fix minor bugs
+
+0.3 (2012-09-16)
+~~~~~~~~~~~~~~~~
+* fix minor bugs
+
+0.2 (2012-09-16)
+~~~~~~~~~~~~~~~~
+* fix minor bugs
+
+0.1 (2012-09-16)
+~~~~~~~~~~~~~~~~
+* modify setup.py
+
+0.0 (2012-06)
+~~~~~~~~~~~~~~~~
+* first release
 
 
 See also

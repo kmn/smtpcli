@@ -1,6 +1,10 @@
 Metadata-Version: 1.0
 Name: smtpcli
+<<<<<<< HEAD
 Version: 0.2
+=======
+Version: 0.3
+>>>>>>> devel
 Summary: SMTP CLI tool
 Home-page: https://github.com/kmn/smtpcli
 Author: Shohei Kamon
@@ -20,11 +24,15 @@ Description: ======================================
         
         Setup
         -----
+        
+        Case: Github
+        
         ::
         
            $ git clone https://github.com/kmn/smtpcli
            $ cd smtpcli
            $ sudo python setup.py install
+<<<<<<< HEAD
            $ cp smtpcli.conf.sample $HOME/.smtpcli.conf
          
            and edit $HOME/.smtpcli.conf
@@ -43,7 +51,19 @@ Description: ======================================
         0.0 (2012-06)
         ~~~~~~~~~~~~~~~~
         * first release
+=======
+           $ cp sample/smtpcli.conf.sample $HOME/.smtpcli.conf
+         
+           and edit $HOME/.smtpcli.conf
         
+        Case: Pypi
+>>>>>>> devel
+        
+        ::
+           $ sudo pip install smtpcli
+           $ cp sample/smtpcli.conf.sample $HOME/.smtpcli.conf
+         
+           and edit $HOME/.smtpcli.conf
         
         Usage
         -----
@@ -53,6 +73,7 @@ Description: ======================================
         
         An alternative method of command options that use the config file.
         Copy examples/.smtpcli.conf.sample to `$HOME/.smtpcli.conf`. `password` key to set password in plain text.
+        
         ::
         
            # 
@@ -65,6 +86,7 @@ Description: ======================================
         
         Sending mail
         ~~~~~~~~~~~~~~~~~~~~
+<<<<<<< HEAD
         
         ::
            $ echo "Hello, world!" > msg.txt
@@ -76,6 +98,39 @@ Description: ======================================
            Body: Hello, world!
         
            Send this email? [y/N] 
+=======
+        
+        ::
+           $ echo "Hello, world!" > msg.txt
+           $ smtpcli --to user007@example.org  --subject "from 001 to 007" \
+             --file msg.txt
+        
+           To: user007@example.org
+           Subject: from 001 to 007
+           Body: Hello, world!
+        
+           Send this email? [y/N] 
+        
+        
+        History
+        -------
+        
+        0.3 (2012-09-16)
+        ~~~~~~~~~~~~~~~~
+        * fix minor bugs
+        
+        0.2 (2012-09-16)
+        ~~~~~~~~~~~~~~~~
+        * fix minor bugs
+        
+        0.1 (2012-09-16)
+        ~~~~~~~~~~~~~~~~
+        * modify setup.py
+        
+        0.0 (2012-06)
+        ~~~~~~~~~~~~~~~~
+        * first release
+>>>>>>> devel
         
         
         See also
