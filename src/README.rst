@@ -1,5 +1,5 @@
 ======================================
-`smtpcli` is SMTP Client tool.
+`smtpcli` is SMTP CLI tool.
 ======================================
 
 This command line tool for SMTP client.
