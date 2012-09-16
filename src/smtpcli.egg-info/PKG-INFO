@@ -1,11 +1,12 @@
-Metadata-Version: 1.0
+Metadata-Version: 1.1
 Name: smtpcli
 Version: 0.5
-Summary: SMTP CLI tool
-Home-page: https://github.com/kmn/smtpcli
 Author: Shohei Kamon
-Author-email: kamonshohei@gmail.com
-License:  GNU General Public License version 3
+Author-email: kamonshohei at gmail com
+Home-page: https://github.com/kmn/smtpcli
+Download-url: UNKNOWN
+Summary: SMTP CLI tool
+License: GNU General Public License version 3
 Description: ======================================
         `smtpcli` is SMTP Client tool.
         ======================================
@@ -124,7 +125,6 @@ Description: ======================================
         ---------
         
         * garbling when viewing via iPhone.
-        
 Platform: UNKNOWN
 Classifier: Development Status :: 3 - Alpha
 Classifier: Intended Audience :: System Administrators
@@ -133,3 +133,5 @@ Classifier: Programming Language :: Python
 Classifier: Topic :: Communications :: Email
 Classifier: Topic :: Communications :: Email :: Email Clients (MUA)
 Classifier: Topic :: System :: Systems Administration
+
+
